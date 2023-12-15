@@ -1,0 +1,18 @@
+import turtle
+
+def turtle_spiral(length):
+    if length == 1:
+        turtle.penup()
+    else:
+        if length % 4 == 1:
+            if turtle.pencolor() == 'black':
+                turtle.pencolor('yellow')
+            else:
+                turtle.pencolor('black')
+        turtle.pendown()
+        turtle.forward(length)
+        turtle.left(90)
+        turtle_spiral(length - 1)
+
+turtle_spiral(200)
+turtle.done()
