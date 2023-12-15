@@ -1,13 +1,5 @@
-def integer_at_least_n(number, n):
-    return (isinstance(number, int) and number >= n)
-
-
-def recursive_triangle_numbers(number):
-    if integer_at_least_n(number, 0):
-        if number == 0:
-            print("trianlge number for 0 is 0")
-            return 0
-        else:
-            previous_value = recursive_triangle_numbers(number - 1)
-            print('Number', number, "so far", number + previous_value)
-            return (number + previous_value)
+def triangle_number(n):
+    if n == 1:
+        return 1
+    else:
+        return n + triangle_number(n - 1)
