@@ -1,0 +1,20 @@
+def sorting_a_list(input_list):
+    if len(input_list) <= 1:
+        return input_list
+    elif len(input_list) == 2:
+        return [min(input_list), max(input_list)]
+    else:
+        pivot = input_list[0]
+        lower_list = []
+        higher_list = []
+        for x in input_list[1:]:
+            if x <= pivot:
+                lower_list.append(x)
+            else:
+                higher_list.append(x)
+        sorted_lower_list = sorting_a_list(lower_list)
+        sorted_higher_list = sorting_a_list(higher_list)
+        return sorted_lower_list + [pivot] + sorted_higher_list
+
+input_list = [35, 42, 39, 7, 49, 46, 33, 43, 28, 25]
+print(sorting_a_list(input_list))
